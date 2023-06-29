@@ -14,6 +14,9 @@ alias g='git'
 # Kubernetes
 alias k='kubectl'
 
+# Chezmoi
+alias cz='chezmoi'
+
 # Docker
 alias dk='docker'
 alias dki='docker image ls -a'
