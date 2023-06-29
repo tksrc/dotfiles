@@ -4,6 +4,12 @@
 set -e # exit immediately if any command returns a non-zero exit code
 set -f # disable filename expansion (globbing)
 
+# Ask for the admin password
+sudo -v
+
+# Keepalive the sudo access
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
 
 # Install Developer Tools
