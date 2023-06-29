@@ -12,9 +12,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
 
-# Install Developer Tools
-# xcode-select --install 2>/dev/null || true
-
 # Install Homebrew
 PATH=$PATH:/opt/homebrew/bin
 printf "\n🚀 Installing homebrew\n"
