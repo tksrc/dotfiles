@@ -1,6 +1,9 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
 printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
 
 # Install Developer Tools
@@ -133,5 +136,7 @@ brew install --cask \
 font-roboto-mono-nerd-font \
 font-ubuntu-nerd-font \
 font-jetbrains-mono-nerd-font
+
+printf "\n✅ Complete\n"
 
 {{ end -}}

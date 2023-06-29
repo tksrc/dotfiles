@@ -1,20 +1,10 @@
-# ZSH Path
+# Oh My ZSH
 export ZSH="$HOME/.oh-my-zsh"
-
-# Theme
 ZSH_THEME=cloud
-
-# ZSH Plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-
-# Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
-# Paths
+# Source PATHs, Aliases and Functions
 source $HOME/.path
-
-# Aliases
 source $HOME/.aliases
-
-# Functions
 source $HOME/.functions
