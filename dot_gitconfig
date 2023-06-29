@@ -1,0 +1,54 @@
+[user]
+	name = "Teodor Kostadinov"
+	email = "teo@privatemail.us"
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = nano
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[credential]
+	helper = store
+
+[color]
+	ui = true
+
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = cyan
+	branch = yellow bold ul
+
+[diff]
+	compactionHeuristic = true
+	noprefix = true
+
+[pull]
+	ff = only
+
+[push]
+	default = current
+
+[alias]
+	a = "add"
+	cm = "commit -m"
+	co = "checkout"
+	cob = "checkout -b"
+	com = "!git checkout main || git checkout master"
+	comp = "!git checkout main || git checkout master && git pull"
+	f = "fetch"
+	m = "merge"
+	p = "push"
+	psu = "!git push --set-upstream origin $(git symbolic-ref --short HEAD)"
+	pl = "pull"
+    root = "rev-parse --show-toplevel"
+	pushall = "!git remote | xargs -L1 git push --all"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
