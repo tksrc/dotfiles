@@ -7,7 +7,7 @@ set -f # disable filename expansion (globbing)
 printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
 
 # Install Developer Tools
-xcode-select --install 2>/dev/null || true
+# xcode-select --install 2>/dev/null || true
 
 # Install Homebrew
 PATH=$PATH:/opt/homebrew/bin
@@ -98,11 +98,13 @@ brew install python@3.11 pipenv pipx poetry # Python and friends
 python3 --version | grep 3.10 && brew unlink python3 && brew link python@3.11 --force
 
 # Go
+export GOPATH="$HOME/.go"
 brew install go
 go install github.com/cosmtrek/air@latest
 
 # NodeJS
 brew install node@18
+export PATH="$PATH:${BREW_PREFIX}/opt/node@18/bin"
 npm install -g nodemon
 npm install -g json-server
 npm install -g @bitwarden/cli
