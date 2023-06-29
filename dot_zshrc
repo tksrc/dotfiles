@@ -18,6 +18,3 @@ source $HOME/.aliases
 
 # Functions
 source $HOME/.functions
-
-# Completion
-source $HOME/.completion
