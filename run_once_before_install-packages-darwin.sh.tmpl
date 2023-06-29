@@ -1,6 +1,8 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
+
 # Install Developer Tools
 xcode-select --install 2>/dev/null || true
 
@@ -18,6 +20,7 @@ else
     printf "\nHomebrew installed successfully.\n"
 fi
 
+# Install Homebrew Packages
 printf "\n🚀 Installing homebrew packages\n"
 
 BREW_PREFIX=$(brew --prefix)

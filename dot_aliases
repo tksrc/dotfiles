@@ -16,6 +16,13 @@ alias k='kubectl'
 
 # Chezmoi
 alias cz='chezmoi'
+alias cza='chezmoi apply'
+alias czaf='chezmoi apply --force'
+alias czu='chezmoi update'
+alias czd='chezmoi diff'
+alias czs='chezmoi status'
+alias czm='chezmoi managed'
+alias czi='chezmoi ignored'
 
 # Docker
 alias dk='docker'
