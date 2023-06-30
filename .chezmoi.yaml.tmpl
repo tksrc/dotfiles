@@ -1,4 +1,6 @@
-{{ $email := promptString "email" -}}
+{{ $username := promptString "Local username" -}}
+{{ $email := promptString "Email address" -}}
 
 data:
+    username: {{ $username | quote }}
     email: {{ $email | quote }}
