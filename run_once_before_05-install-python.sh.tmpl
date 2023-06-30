@@ -9,7 +9,7 @@ export PATH=$PATH:/opt/homebrew/bin
 printf "\n🚀 Installing Python on MacOS\n"
 
 brew install python@3.11 pipenv pipx poetry
-# python3 --version | grep 3.10 && brew unlink python3 && brew link python@3.11 --force
+brew unlink python3 && brew link python@3.11 --force
 
 printf "\n✅ Complete\n"
 

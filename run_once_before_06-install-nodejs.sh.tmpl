@@ -5,6 +5,7 @@ set -e # exit immediately if any command returns a non-zero exit code
 set -f # disable filename expansion (globbing)
 
 export PATH=$PATH:/opt/homebrew/bin
+BREW_PREFIX=$(brew --prefix)
 
 printf "\n🚀 Installing NodeJS on MacOS\n"
 
