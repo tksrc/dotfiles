@@ -1,0 +1,19 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+PATH=$PATH:/opt/homebrew/bin
+
+printf "\n🚀 Installing fonts on MacOS\n"
+
+brew tap homebrew/cask-fonts
+brew install --cask \
+font-roboto-mono-nerd-font \
+font-ubuntu-nerd-font \
+font-jetbrains-mono-nerd-font
+
+printf "\n✅ Complete\n"
+
+{{ end -}}

@@ -10,25 +10,9 @@ sudo -v
 # Keepalive the sudo access
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-printf "\n🚀 Installing Software Packages for a Darwin-based OS\n"
+printf "\n🚀 Installing Software Packages for a MacOS\n"
 
-# Install Homebrew
 PATH=$PATH:/opt/homebrew/bin
-printf "\n🚀 Installing homebrew\n"
-
-if which brew >/dev/null; then
-    printf "\nHomebrew is installed already.\n"
-else
-    sudo mkdir -p /opt/homebrew || true
-    sudo chown -R "$(whoami)":wheel /opt/homebrew
-    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    printf "\nHomebrew installed successfully.\n"
-fi
-
-# Install Homebrew Packages
-printf "\n🚀 Installing homebrew packages\n"
-
 BREW_PREFIX=$(brew --prefix)
 
 # Standard Apps
@@ -50,7 +34,8 @@ privatevpn \
 selfcontrol \
 vlc \
 piezo \
-obsidian
+obsidian \
+docker
 
 brew install \
 dive \
@@ -77,9 +62,6 @@ terraform-docs \
 terrascan \
 trivy
 
-# Containers
-brew install --cask docker
-
 # # .NET
 # brew install dotnet-sdk # sdk
 # brew isntall dotnet # runtime
@@ -95,22 +77,6 @@ brew install --cask docker
 
 # dotnet tool uninstall --global Microsoft.Web.LibraryManager.Cli || true
 # dotnet tool install --global -a arm64 Microsoft.Web.LibraryManager.Cli || true
-
-# Python
-brew install python@3.11 pipenv pipx poetry # Python and friends
-python3 --version | grep 3.10 && brew unlink python3 && brew link python@3.11 --force
-
-# Go
-export GOPATH="$HOME/.go"
-brew install go
-go install github.com/cosmtrek/air@latest
-
-# NodeJS
-brew install node@18
-export PATH="$PATH:${BREW_PREFIX}/opt/node@18/bin"
-npm install -g nodemon
-npm install -g json-server
-npm install -g @bitwarden/cli
 
 # Other Tools
 brew install coreutils
@@ -134,13 +100,6 @@ tmux \
 hey \
 mtr \
 hugo
-
-# Fonts
-brew tap homebrew/cask-fonts
-brew install --cask \
-font-roboto-mono-nerd-font \
-font-ubuntu-nerd-font \
-font-jetbrains-mono-nerd-font
 
 printf "\n✅ Complete\n"
 

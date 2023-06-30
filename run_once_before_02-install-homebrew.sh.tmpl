@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+# Install Homebrew
+PATH=$PATH:/opt/homebrew/bin
+printf "\n🚀 Installing homebrew on MacOS\n"
+
+if which brew >/dev/null; then
+    printf "\nHomebrew is installed already.\n"
+else
+    sudo mkdir -p /opt/homebrew || true
+    sudo chown -R "$(whoami)":wheel /opt/homebrew
+    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C /opt/homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    printf "\nHomebrew installed successfully.\n"
+fi
+
+printf "\n✅ Complete\n"
+
+{{ end -}}

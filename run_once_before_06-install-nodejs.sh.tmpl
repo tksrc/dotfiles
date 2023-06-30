@@ -1,0 +1,19 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+export PATH=$PATH:/opt/homebrew/bin
+
+printf "\n🚀 Installing NodeJS on MacOS\n"
+
+brew install node@18
+export PATH="$PATH:${BREW_PREFIX}/opt/node@18/bin"
+npm install -g nodemon
+npm install -g json-server
+npm install -g @bitwarden/cli
+
+printf "\n✅ Complete\n"
+
+{{ end -}}
