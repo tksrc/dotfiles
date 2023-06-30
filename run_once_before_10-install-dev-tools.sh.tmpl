@@ -1,0 +1,53 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+# Ask for the admin password
+sudo -v
+
+# Keepalive the sudo access
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+export PATH=$PATH:/opt/homebrew/bin
+BREW_PREFIX=$(brew --prefix)
+
+printf "\n🚀 Installing Dev tools on MacOS\n"
+
+brew install --cask \
+visual-studio-code \
+drawio \
+dash \
+iterm2 \
+jetbrains-toolbox \
+docker
+
+brew install coreutils
+ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum" || true
+
+brew install moreutils \
+findutils \
+gnu-sed \
+gnu-tar \
+grep \
+openssh \
+ack \
+git \
+git-lfs \
+jq \
+yq \
+htop \
+pv \
+tree \
+wget \
+tmux \
+hey \
+mtr \
+hugo \
+dive \
+devutils
+
+printf "\n✅ Complete\n"
+
+{{ end -}}

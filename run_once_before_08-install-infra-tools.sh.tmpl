@@ -1,0 +1,21 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+export PATH=$PATH:/opt/homebrew/bin
+
+printf "\n🚀 Installing infra tools on MacOS\n"
+
+brew install \
+pulumi \
+terraform \
+terragrunt \
+terraform-docs \
+terrascan \
+trivy
+
+printf "\n✅ Complete\n"
+
+{{ end -}}

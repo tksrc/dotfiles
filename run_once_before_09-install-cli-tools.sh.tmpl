@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+export PATH=$PATH:/opt/homebrew/bin
+
+printf "\n🚀 Installing CLI tools on MacOS\n"
+
+brew tap aws/tap
+brew install \
+gh \
+azure-cli \
+awscli \
+kubectl \
+helm \
+derailed/k9s/k9s \
+aws-sam-cli
+
+printf "\n✅ Complete\n"
+
+{{ end -}}

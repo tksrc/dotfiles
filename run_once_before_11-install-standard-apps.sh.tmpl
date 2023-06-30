@@ -1,0 +1,35 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e # exit immediately if any command returns a non-zero exit code
+set -f # disable filename expansion (globbing)
+
+# Ask for the admin password
+sudo -v
+
+# Keepalive the sudo access
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+printf "\n🚀 Installing Standard Apps for a MacOS\n"
+
+PATH=$PATH:/opt/homebrew/bin
+
+# Standard Apps
+brew install --cask \
+brave-browser \
+firefox \
+bitwarden \
+spotify \
+appcleaner \
+alfred \
+obs \
+grammarly-desktop \
+privatevpn \
+selfcontrol \
+vlc \
+piezo \
+obsidian
+
+printf "\n✅ Complete\n"
+
+{{ end -}}
