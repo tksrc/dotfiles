@@ -14,7 +14,7 @@ printf "\n🚀 Setup MacOS\n"
 sudo nvram SystemAudioVolume=" "
 
 # Set appearance
-defaults write NSGlobalDomain AppleAccentColor -int 4 
+defaults write NSGlobalDomain AppleAccentColor -int 4
 defaults write NSGlobalDomain AppleAquaColorVariant -int 1
 defaults write NSGlobalDomain AppleHighlightColor -string "0.698039 0.843137 1.000000 Blue"
 
@@ -91,8 +91,8 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+# defaults write NSGlobalDomain KeyRepeat -int 1
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en-GB"
@@ -113,7 +113,7 @@ defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -151,7 +151,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Set default new window target
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
-defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/{{ .username }}/";
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/{{ .username }}/"
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
