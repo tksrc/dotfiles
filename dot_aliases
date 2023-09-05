@@ -126,15 +126,3 @@ alias hg='history|grep'
 
 # Clear
 alias c='clear'
-
-#----------------------------------------------------------------------------------------------------------------------
-# Tools
-#----------------------------------------------------------------------------------------------------------------------
-# Show Public IP
-alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-
-# Show Private IP
-alias localip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2"
-
-# UUID Generator
-alias uuid='uuidgen | tr "[:upper:]" "[:lower:]"'

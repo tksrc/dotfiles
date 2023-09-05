@@ -1,2 +1,19 @@
-# Weather
-function weather() { curl "https://wttr.in/$1" }
+function weather() {
+    curl "https://wttr.in/$1"
+}
+
+function flushdns() {
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+}
+
+funchtion uuid() {
+    uuidgen | tr "[:upper:]" "[:lower:]"
+}
+
+function localip() {
+    ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\\  -f2
+}
+
+function publicip() {
+    dig +short myip.opendns.com @resolver1.opendns.com
+}
