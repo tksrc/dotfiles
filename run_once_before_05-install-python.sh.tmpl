@@ -10,6 +10,8 @@ printf "\n🚀 Installing Python on MacOS\n"
 
 brew install python@3.11 pipenv pipx poetry
 brew unlink python3 && brew link python@3.11 --force
+pipx install black
+pipx install flake8
 
 printf "\n✅ Complete\n"
 
