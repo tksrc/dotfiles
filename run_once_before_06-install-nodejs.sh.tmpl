@@ -7,13 +7,16 @@ set -f # disable filename expansion (globbing)
 export PATH=$PATH:/opt/homebrew/bin
 BREW_PREFIX=$(brew --prefix)
 
-printf "\n🚀 Installing NodeJS on MacOS\n"
+printf "\n🚀 Installing NodeJS and Bun on MacOS\n"
 
 brew install node@18
 export PATH="$PATH:${BREW_PREFIX}/opt/node@18/bin"
-npm install -g nodemon
-npm install -g json-server
-npm install -g @bitwarden/cli
+
+brew tap oven-sh/bun
+brew install bun
+
+bun install -g nodemon
+bun install -g json-server
 
 printf "\n✅ Complete\n"
 
