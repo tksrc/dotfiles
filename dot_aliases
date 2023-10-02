@@ -7,6 +7,7 @@ alias .....='cd ../../../..'
 alias custdir='cd ~/customers'
 alias prjdir='cd ~/projects'
 alias tmpdir='cd ~/temp'
+alias drive='cd ~/Library/CloudStorage/SynologyDrive-Home'
 
 # Git
 alias g='git'
