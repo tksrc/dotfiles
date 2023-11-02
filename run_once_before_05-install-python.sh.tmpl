@@ -8,10 +8,12 @@ export PATH=$PATH:/opt/homebrew/bin
 
 printf "\n🚀 Installing Python on MacOS\n"
 
-brew install python@3.11 pipenv pipx poetry
-brew unlink python3 && brew link python@3.11 --force
+brew install python@3.12 pipx
+brew unlink python3 && brew link python@3.12 --force
 pipx install black
 pipx install flake8
+pipx install poetry
+pipx install pipenv
 
 printf "\n✅ Complete\n"
 
