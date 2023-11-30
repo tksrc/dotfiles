@@ -6,10 +6,11 @@ set -f # disable filename expansion (globbing)
 
 export PATH=$PATH:/opt/homebrew/bin
 
-printf "\n🚀 Installing infra tools on MacOS\n"
+printf "\n🚀 Installing Rust on MacOS\n"
 
-brew install pulumi terraform terragrunt
-pipx install --include-deps ansible
+brew install rustup-init
+
+rustup-init -q -y --no-modify-path
 
 printf "\n✅ Complete\n"
 
