@@ -4,10 +4,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-alias custdir='cd ~/customers'
-alias prjdir='cd ~/projects'
-alias tmpdir='cd ~/temp'
-alias drive='cd ~/Library/CloudStorage/SynologyDrive-Home'
+alias cod='cd ~/code'
+alias tmp='cd ~/temp'
 
 # Git
 alias g='git'
@@ -79,13 +77,6 @@ alias tgrd='terragrunt run-all destroy'
 alias tgf='terragrunt hclfmt'
 alias tgclean='find . -type d -name '.terragrunt-cache' -prune -exec rm -rf {} \;'
 alias tggraph='terragrunt graph-dependencies | dot -Tsvg > graph.svg'
-
-# Pulumi
-alias pu='pulumi'
-alias pup='pulumi up'
-alias pupy='pulumi up -y'
-alias pud='pulumi destroy'
-alias pudy='pulumi destroy -y'
 
 # LS
 # Detect which `ls` flavor is in use
