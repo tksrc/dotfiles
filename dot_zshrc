@@ -3,8 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME=cloud
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions aws pip poetry 
-npm docker)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions aws npm docker)
 
 source $ZSH/oh-my-zsh.sh
 
