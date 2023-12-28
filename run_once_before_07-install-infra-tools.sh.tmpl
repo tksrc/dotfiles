@@ -7,8 +7,8 @@ set -f # disable filename expansion (globbing)
 export PATH=$PATH:/opt/homebrew/bin
 
 printf "\n🚀 Installing infra tools on MacOS\n"
-
-brew install terraform terragrunt
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
 pipx install --include-deps ansible
 
 printf "\n✅ Complete\n"
